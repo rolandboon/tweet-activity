@@ -1,0 +1,55 @@
+doctype 5
+html
+  head
+    meta(charset='utf-8')
+    title Twitter activity
+    != css('app')
+
+  body
+
+    div.container
+      div.navbar
+        div.navbar-inner
+          a.brand Twitter activity
+          ul.nav
+            li: a(href="#add-keywords", data-toggle="modal") Add keywords
+            li: a(href="#remove-keywords", data-toggle="modal") Remove keywords
+          img.pull-right#loading(src="/loader.gif")
+
+      div.row
+        div.span12
+          #activity
+
+    div.modal.hide.fade#add-keywords
+      div.modal-header
+        button.close(data-dismiss="modal", aria-hidden="true")&times;
+        h3 Add keywords
+      form.modal-body.form-horizontal
+        div.control-group
+          label.control-label Title
+          div.controls
+            input#data-title
+        div.control-group
+          label.control-label Keywords
+          div.controls
+            input#data-keywords
+      div.modal-footer
+        a.btn(data-dismiss="modal", aria-hidden="true") Close
+        a.btn.btn-primary Add keywords
+
+    div.modal.hide.fade#remove-keywords
+      div.modal-header
+        button.close(data-dismiss="modal", aria-hidden="true")&times;
+        h3 Remove keywords
+      form.modal-body.form-horizontal
+        div.control-group
+      div.modal-footer
+        a.btn(data-dismiss="modal", aria-hidden="true") Close
+        a.btn.btn-primary Remove keywords
+
+    != js('//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+    != js('//d3js.org/d3.v3.min.js')
+    != js('cubism.v1.js')
+    != js('bootstrap.min.js')
+    script(src="/socket.io/socket.io.js")
+    != js('app')

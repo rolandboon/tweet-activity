@@ -1,0 +1,22 @@
+{
+    "name": "activity",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies":{
+        "coffee-script":"1.4.0",
+        "express":"3.1.0",
+        "jade":"0.28.1",
+        "connect-assets":"2.3.3",
+        "stylus":"0.32.0",
+        "cube":"0.2.9",
+        "which": "1.0.5",
+        "immortal-ntwitter": "git://github.com/rolandboon/immortal-ntwitter.git",
+        "socket.io": "0.9.13"
+    },
+    "scripts": {
+        "start": "cake run"
+    },
+    "devDependencies": {
+        "supervisor": "*"
+    }
+}
